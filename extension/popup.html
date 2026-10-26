@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" data-theme="nord">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Boreal</title><link rel="stylesheet" href="styles.css"></head>
+<body class="popup">
+  <header class="brand-row"><a class="brand" href="overview.html" target="_blank" aria-label="Boreal overview"><img src="icons/32.png" width="28" height="28" alt=""><span>boreal<span class="brand-dot">.</span></span></a><span class="eyebrow">MUSIC RECOGNIZER</span></header>
+  <main>
+    <div class="section-label"><span>FROM YOUR CURRENT TAB</span><span class="live-dot" aria-hidden="true"></span></div>
+    <section class="listen-panel" aria-labelledby="status-title">
+      <div id="orb" class="orb" aria-hidden="true"><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div role="status" aria-live="polite"><h1 id="status-title">Ready to discover</h1><p id="status-detail">Play something. Find your next favorite.</p></div>
+      <progress id="progress" value="0" max="100" aria-label="Listening progress" hidden></progress>
+      <button id="listen" class="primary wide">Recognize music</button>
+    </section>
+    <section id="result" class="result-card" hidden aria-label="Recognized track"></section>
+    <div class="setting-row"><label for="duration">Listen for</label><select id="duration"><option value="6">6 seconds</option><option value="10" selected>10 seconds</option><option value="15">15 seconds</option></select></div>
+    <div class="recent-heading"><h2>Recent discoveries</h2><a href="overview.html" target="_blank">View all <span aria-hidden="true">↗</span></a></div>
+    <div id="recent" class="recent-list"></div>
+  </main>
+  <footer class="popup-footer"><span>Local fingerprints. No audio uploads.</span><button id="theme" class="text-button" aria-label="Switch to dark theme">Dark theme</button></footer>
+  <p class="service-note">Free, unofficial Shazam recognition. <a href="overview.html#privacy" target="_blank">How it works</a></p>
+  <script type="module" src="popup.js"></script>
+</body></html>

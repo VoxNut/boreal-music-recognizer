@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Boreal — Music Recognizer",
+  "version": "1.0.0",
+  "description": "Recognize music in the current tab. Local Rust fingerprints, listening history, CSV export, and Nord or dark themes.",
+  "minimum_chrome_version": "116",
+  "permissions": ["activeTab", "tabCapture", "offscreen", "storage"],
+  "host_permissions": ["https://amp.shazam.com/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Recognize music with Boreal",
+    "default_icon": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" }
+  },
+  "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "options_page": "overview.html",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'none'; connect-src 'self' https://amp.shazam.com; img-src 'self' https://*.mzstatic.com https://*.shazam.com; base-uri 'none'"
+  }
+}

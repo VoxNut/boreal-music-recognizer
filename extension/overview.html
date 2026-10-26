@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" data-theme="nord">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Your discoveries · Boreal</title><link rel="icon" href="icons/32.png"><link rel="stylesheet" href="styles.css"></head>
+<body class="overview">
+  <aside class="sidebar">
+    <a class="brand" href="overview.html"><img src="icons/48.png" width="34" height="34" alt=""><span>boreal<span class="brand-dot">.</span></span></a>
+    <p class="sidebar-caption">A LITTLE CURIOSITY.<br>A LOT OF GOOD MUSIC.</p>
+    <nav aria-label="Main navigation"><a class="nav-item active" href="#discoveries"><span aria-hidden="true">◈</span> Your discoveries</a><a class="nav-item" href="#preferences"><span aria-hidden="true">☷</span> Preferences</a><a class="nav-item" href="#privacy"><span aria-hidden="true">◎</span> Privacy &amp; about</a></nav>
+    <div class="sidebar-bottom"><span class="tiny-wave" aria-hidden="true">▂ ▅ █ ▃ ▆</span><p>Good music finds a way.</p><span class="muted">BOREAL / 01</span></div>
+  </aside>
+  <main class="dashboard" id="discoveries">
+    <header class="dashboard-header"><span class="eyebrow">YOUR PERSONAL MUSIC TRAIL</span><span class="local-pill"><span class="live-dot" aria-hidden="true"></span> Stored on this device</span></header>
+    <section class="page-heading"><div><h1>Follow the sound<span class="brand-dot">.</span></h1><p>Every “what song is this?” has a home here.</p></div><button id="export" class="primary"><span aria-hidden="true">↓</span> Export CSV</button></section>
+    <section class="stats" aria-label="Library statistics"><div><span class="stat-label">TOTAL DISCOVERIES</span><strong id="stat-recognitions">0</strong><span class="muted">moments worth keeping</span></div><div><span class="stat-label">UNIQUE TRACKS</span><strong id="stat-tracks">0</strong><span class="muted">new additions to your world</span></div><div><span class="stat-label">ARTISTS FOUND</span><strong id="stat-artists">0</strong><span class="muted">voices along the way</span></div></section>
+    <section class="library"><div class="library-header"><div><h2>Your discoveries <span id="history-count" class="count">0</span></h2><p class="muted">Newest finds first. Always here when you need them.</p></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search tracks, artists, albums…" aria-label="Search history"></label></div>
+      <div id="history" class="history-list"></div>
+      <div class="library-bottom"><span id="showing" class="muted"></span><button id="clear" class="text-button danger">Clear history</button></div>
+    </section>
+    <section id="preferences" class="preferences"><div><span class="eyebrow">MAKE IT YOURS</span><h2>Preferences</h2></div><div class="preference-controls"><label>Listening time<select id="duration"><option value="6">6 seconds</option><option value="10">10 seconds</option><option value="15">15 seconds</option></select></label><label>Appearance<select id="theme"><option value="nord">Nord · default</option><option value="dark">Dark</option></select></label></div><p class="muted">Longer clips can help with quiet music, mixes, and noisy scenes. The 15-second mode analyzes the final 12 seconds to fit the service limit. Settings apply to the next recognition.</p></section>
+    <section id="privacy" class="about"><div><span class="eyebrow">SMALL FOOTPRINT. GOOD INTENTIONS.</span><h2>Made for the moment.</h2></div><div><p>Play music in a website, then click the Boreal toolbar icon. Boreal listens only to that tab for your selected duration. You can close the popup while it listens.</p><p>Rust + WebAssembly creates the fingerprint on your device. Only the fingerprint is sent to Shazam, which also receives your IP address. Raw audio is discarded. Cover images load from Shazam or Apple when shown. Your latest 2,000 successful discoveries and preferences stay in this browser profile; CSV exports include source page titles and URLs.</p><p>Recognition uses Shazam’s unofficial endpoint with no API key, subscription, or hosted backend. Internet access is required; availability and rate limits can change. Browser internal pages, local files, and some protected media cannot be captured. Not affiliated with Shazam or Apple.</p><p class="muted">Built with the open-source SongRec fingerprinting engine. GPL-3.0-or-later. <a href="https://github.com/marin-m/SongRec" target="_blank" rel="noopener noreferrer">SongRec ↗</a> · <a href="THIRD_PARTY_NOTICES.md" target="_blank">Attributions ↗</a></p></div></section>
+    <footer class="dashboard-footer"><span>BOREAL</span><span>Listen a little closer.</span></footer>
+  </main>
+  <div id="notice" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="clear-dialog"><h2>Clear your discoveries?</h2><p>This removes every track from this browser’s history. Export a CSV first if you want to keep a copy.</p><form method="dialog"><button value="cancel">Keep history</button><button value="clear" class="destructive">Clear history</button></form></dialog>
+  <script type="module" src="overview.js"></script>
+</body></html>

@@ -1,0 +1,24 @@
+[package]
+name = "boreal-fingerprint"
+version = "1.0.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+description = "Boreal's local, WebAssembly audio fingerprint engine"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+base64 = "0.22"
+byteorder = "1.5"
+crc32fast = "1.5"
+realfft = "3.5"
+rustfft = "6.4"
+wasm-bindgen = "=0.2.105"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

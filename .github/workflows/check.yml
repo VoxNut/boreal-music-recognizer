@@ -1,0 +1,25 @@
+name: Check and package
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: rustup update stable --no-self-update && rustup default stable
+      - run: rustup target add wasm32-unknown-unknown
+      - run: cargo fmt --manifest-path fingerprint/Cargo.toml -- --check
+      - run: npm run check
+      - run: cargo install wasm-bindgen-cli --version 0.2.105 --locked
+      - run: npm run build
+      - run: npm run package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: boreal-extension
+          path: dist/boreal-1.0.0.zip

@@ -1,0 +1,13 @@
+{
+  "name": "boreal-music-recognizer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm test && cargo test --manifest-path fingerprint/Cargo.toml && cargo clippy --manifest-path fingerprint/Cargo.toml -- -D warnings",
+    "package": "node scripts/package.mjs"
+  }
+}

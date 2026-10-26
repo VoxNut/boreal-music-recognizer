@@ -1,0 +1,7 @@
+/fingerprint/target/
+/dist/
+/node_modules/
+/test-results/
+*.log
+.env
+.env.*
